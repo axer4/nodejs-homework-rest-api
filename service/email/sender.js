@@ -7,7 +7,6 @@ class SenderSendgrid {
     return await sgMail.send({ ...msg, from: process.env.SENDER_SENDGRID })
   }
 }
-
 class SenderNodemailer {
   async send(msg) {
     const config = {

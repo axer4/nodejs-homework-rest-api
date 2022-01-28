@@ -5,13 +5,13 @@ class EmailService {
     this.sender = sender
     switch (env) {
       case 'development':
-        this.link = 'https://581d-185-19-6-62.ngrok.io'
+        this.link = 'https://0d1b-46-250-3-117.ngrok.io'
         break
       case 'test':
         this.link = 'http://localhost:5000/'
         break
       case 'production':
-        this.link = 'http://heroku/'
+        this.link = 'https://heroku'
         break
       default:
         this.link = 'http://localhost:3000/'
@@ -39,7 +39,7 @@ class EmailService {
             link: `${this.link}/api/users/verify/${verifyToken}`,
           },
         },
-        outro: 'Нужна помощь, напишите нам, но лучше пришлите денег.',
+        outro: 'Нужна помощь, напишите нам.',
       },
     }
     return mailGenerator.generate(email)
@@ -62,5 +62,4 @@ class EmailService {
     }
   }
 }
-
 export default EmailService
